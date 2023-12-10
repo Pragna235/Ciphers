@@ -29,7 +29,7 @@ string cipherText(string str, string key)
 	{
 		// converting in range 0-25
 		//this works for lowercase also
-		char ch = ((toupper(plaintext[i]) - 'A' + toupper(key[i]) - 'A') % 26) + 'A';
+		char x = ((toupper(str[i]) - 'A' + toupper(key[i]) - 'A') % 26) + 'A';
 
 		cipher_text.push_back(x);
 	}
