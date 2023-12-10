@@ -11,8 +11,7 @@ string generateKey(string str, string key)
 
 	for (int i = 0; ; i++)
 	{
-		if (x == i)
-			i = 0;
+		
 		if (key.size() == str.size())
 			break;
 		key.push_back(key[i]);
@@ -29,10 +28,8 @@ string cipherText(string str, string key)
 	for (int i = 0; i < str.size(); i++)
 	{
 		// converting in range 0-25
-		char x = (str[i] + key[i]) %26;
-
-		// convert into alphabets(ASCII)
-		x += 'A';
+		//this works for lowercase also
+		char ch = ((toupper(plaintext[i]) - 'A' + toupper(key[i]) - 'A') % 26) + 'A';
 
 		cipher_text.push_back(x);
 	}
